@@ -1,4 +1,7 @@
-// File: game.cxx
+/**   @file game.cc
+      @brief implementation file for the game class
+      @author documentation by Robin Kelby
+*/
 
 #include <cassert>    // Provides assert
 #include <climits>    // Provides INT_MAX and INT_MIN
@@ -17,6 +20,11 @@ namespace main_savitch_14
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
 
+/** @brief play ( ) runs one round of the game
+    @param no parameters to the function
+    @return a who variable
+
+*/
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
 // game, with the human player moving first and the computer second.
@@ -45,11 +53,21 @@ game::who game::play( )
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
+/** @brief display_message displays a given string message
+    @param message, a const string& variable
+    @return void function, returns no value
+
+*/
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
 
+/** @brief get_user_move ( ) asks for the user to input a move
+    @param no parameters to the function
+    @return answer, a who variable
+
+*/
 string game::get_user_move( ) const
 {
 	string answer;
@@ -60,6 +78,11 @@ string game::get_user_move( ) const
 	return answer;
 }
 
+/** @brief winning ( ) returns the player that is currently winning the game
+    @param no parameters to the function
+    @return a who variable
+
+*/
 game::who game::winning()const {
 
 	int value = evaluate();
@@ -77,6 +100,12 @@ game::who game::winning()const {
 //*************************************************************************
 // PRIVATE FUNCTIONS (these are the same for every game)
 
+/** @brief eval_with_lookahead evaluates a board position with lookahead
+    @param look_ahead, an int
+    @param beat_this, an int
+    @return value, an int
+
+*/
 int game::eval_with_lookahead(int look_ahead, int beat_this)
 // Evaluate a board position with lookahead.
 // --int look_aheads:  How deep the lookahead should go to evaluate the move.
@@ -125,6 +154,11 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	return -best_value;
 }
 
+/** @brief make_computer_move ( ) makes the computer's move
+    @param no parameters to the function
+    @return void function, no return value
+
+*/
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -158,6 +192,11 @@ void game::make_computer_move( )
 	make_move(best_move);
 }
 
+/** @brief make_human_move ( ) allows the user to make a move
+    @param no parameters to the function
+    @return void function, no return value
+
+*/
 void game::make_human_move( ) {
 	string move;
 

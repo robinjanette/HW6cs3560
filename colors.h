@@ -1,3 +1,9 @@
+/** @file colors.h
+    @brief file defining the color variables for the othello game
+    @author Matthew Belyk, documentation by Robin Kelby
+
+*/
+
 //***********************************************************
 //
 //  File:     colors.h

@@ -1,3 +1,9 @@
+/** @file main.cc
+    @brief application file using the game and othello classes
+    @author Brock Ferrell, documentation by Robin Kelby
+
+*/
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015

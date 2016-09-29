@@ -1,5 +1,10 @@
-// File: game.h (part of the namespace main_savitch_14)
+/** @file game.h
+    @brief header file for the game class
+    @author documentation by Robin Kelby
 
+*/
+
+// File: game.h (part of the namespace main_savitch_14)
 
 #ifndef MAIN_SAVITCH_GAME
 #define MAIN_SAVITCH_GAME
@@ -34,6 +39,11 @@ protected:
 	virtual std::string get_user_move( ) const;
 	virtual who last_mover( ) const
 	{ return (move_number % 2 == 1 ? HUMAN : COMPUTER); }
+/** @brief moves_completed ( ) returns the number of moves completed in the game
+    @param no parameters to the function
+    @return move_number, an int member variable
+
+*/
 	virtual int moves_completed( ) const { return move_number; }
 	virtual who next_mover( ) const
 	{ return (move_number % 2 == 0 ? HUMAN : COMPUTER); }

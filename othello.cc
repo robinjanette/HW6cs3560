@@ -1,3 +1,9 @@
+/** @file othello.cc
+    @brief implementation file for the othello class
+    @author Brock Ferrell, documentation by Robin Kelby
+
+*/
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -8,6 +14,11 @@
 namespace main_savitch_14
 {
 
+/** @brief display_status ( ) displays the current game board
+    @param no parameters to the function
+    @return void function, no return value
+
+*/
 void Othello::display_status()const
 {
   cout << BLUE << "   _______ _______ _______ _______ _______ _______ _______ _______\n";

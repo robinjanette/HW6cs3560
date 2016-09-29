@@ -1,11 +1,11 @@
 #macros
 GPP=g++
 
-all: build archive
+all: build doc
 
-archive: colors.h game.cc game.h main.cc makefile othello.cc othello.h piece.h
-	rm -f *.o game
-	tar -cvzf HW5.tar.gz colors.h game.cc game.h main.cc makefile othello.cc othello.h piece.h 
+#archive: colors.h game.cc game.h main.cc makefile othello.cc othello.h piece.h
+#	rm -f *.o game
+#	tar -cvzf HW5.tar.gz colors.h game.cc game.h main.cc makefile othello.cc othello.h piece.h 
 
 build: game
 
@@ -21,5 +21,10 @@ othello.o: othello.h othello.cc piece.h game.h
 main.o: game.h othello.h main.cc
 	$(GPP) -c main.cc
 
+doc: colors.h game.cc game.h main.cc makefile othello.cc othello.h piece.h
+	-doxygen Doxyconfig
+
 clean:
-	-rm -f *.o core *.core game
+	-rm -f *.o core game
+	-rm -r html
+	-rm -r latex
